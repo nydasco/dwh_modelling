@@ -76,6 +76,7 @@ erDiagram
 
   SAT_CUSTOMER {
     string sat_customer_hk PK
+    string hub_customer_hk
     datetime load_datetime
     string record_source
     string hash_diff
@@ -88,6 +89,7 @@ erDiagram
 
   SAT_BOOKING {
     string sat_booking_hk PK
+    string hub_booking_hk
     datetime load_datetime
     string record_source
     string hash_diff
@@ -100,6 +102,7 @@ erDiagram
 
   SAT_ORDER {
     string sat_order_hk PK
+    string hub_order_hk
     datetime load_datetime
     string record_source
     string hash_diff
@@ -110,6 +113,7 @@ erDiagram
 
   SAT_PRODUCT {
     string sat_product_hk PK
+    string hub_product_hk
     datetime load_datetime
     string record_source
     string hash_diff
@@ -120,6 +124,7 @@ erDiagram
 
   SAT_PAYMENT {
     string hash PK
+    string hub_payment_hk
     date load_date
     string source
     string hash_diff
@@ -130,6 +135,7 @@ erDiagram
 
   SAT_CUSTOMER_ADDRESS {
     string hash PK
+    string hub_customer_hk
     date load_date
     string source
     string hash_diff
