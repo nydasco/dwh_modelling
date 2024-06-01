@@ -1,0 +1,55 @@
+erDiagram
+  FACT_ORDER {
+    int order_date_id FK
+    int order_time_id FK
+    int customer_id FK
+    int product_id FK
+    decimal quantity
+    decimal unit_amount
+    decimal total_amount
+    decimal total_gst
+  }
+
+  DIM_CUSTOMER {
+    int customer_id PK
+    string first_name
+    string last_name
+    string phone_number
+    string email_address
+    string street_address
+    string city
+    string state
+    string postcode
+  }
+
+  DIM_DATE {
+    int date_id PK
+    date date
+    int day
+    int month
+    int quarter
+    int year
+    string day_name
+    string month_name
+  }
+
+  DIM_TIME {
+    int time_id PK
+    time time
+    int hour
+    int minute
+    int second
+    string period
+  }
+
+  DIM_PRODUCT {
+    int product_id PK
+    string product_description
+    string product_group_description
+    bool has_gst
+  }
+
+  FACT_ORDER ||--o{ DIM_CUSTOMER : "customer_id"
+  FACT_ORDER ||--o{ DIM_DATE : "order_date_id"
+  FACT_ORDER ||--o{ DIM_TIME : "order_time_id"
+  FACT_ORDER ||--o{ DIM_PRODUCT : "product_id"
