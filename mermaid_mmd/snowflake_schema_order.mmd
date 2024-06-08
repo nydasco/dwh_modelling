@@ -74,14 +74,14 @@ erDiagram
     string product_group_description
   }
 
-  FACT_ORDER ||--o{ DIM_CUSTOMER : "customer_id"
-  FACT_ORDER ||--o{ DIM_DATE : "order_date_id"
-  FACT_ORDER ||--o{ DIM_TIME : "order_time_id"
-  FACT_ORDER ||--o{ DIM_PRODUCT : "product_id"
+  DIM_CUSTOMER ||--o{ FACT_ORDER : "customer_id"
+  DIM_DATE ||--o{ FACT_ORDER : "order_date_id"
+  DIM_TIME ||--o{ FACT_ORDER : "order_time_id"
+  DIM_PRODUCT ||--o{ FACT_ORDER : "product_id"
   
-  DIM_CUSTOMER ||--o{ DIM_ADDRESS : "1:M"
-  DIM_ADDRESS ||--o{ DIM_CITY : "1:M"
-  DIM_ADDRESS ||--o{ DIM_STATE : "1:M"
-  DIM_ADDRESS ||--o{ DIM_POSTCODE : "1:M"
+  DIM_ADDRESS ||--o{ DIM_CUSTOMER : "1:M"
+  DIM_CITY ||--o{ DIM_ADDRESS : "1:M"
+  DIM_STATE ||--o{ DIM_ADDRESS : "1:M"
+  DIM_POSTCODE ||--o{ DIM_ADDRESS : "1:M"
 
-  DIM_PRODUCT ||--o{ DIM_PRODUCT_GROUP : "1:M"
+  DIM_PRODUCT_GROUP ||--o{ DIM_PRODUCT : "1:M"

@@ -49,7 +49,7 @@ erDiagram
     bool has_gst
   }
 
-  FACT_ORDER ||--o{ DIM_CUSTOMER : "customer_id"
-  FACT_ORDER ||--o{ DIM_DATE : "order_date_id"
-  FACT_ORDER ||--o{ DIM_TIME : "order_time_id"
-  FACT_ORDER ||--o{ DIM_PRODUCT : "product_id"
+  DIM_CUSTOMER ||--o{ FACT_ORDER : "customer_id"
+  DIM_DATE ||--o{ FACT_ORDER : "order_date_id"
+  DIM_TIME ||--o{ FACT_ORDER : "order_time_id"
+  DIM_PRODUCT ||--o{ FACT_ORDER : "product_id"
